@@ -1,5 +1,7 @@
 # YoutubeTrace
-Youtubeっぽいアプリ
+
+## 概要
+- Youtubeっぽいアプリ
 
 ## 環境
 - macOS Monterey Version 12.1
