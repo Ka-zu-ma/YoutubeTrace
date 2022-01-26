@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_app/video_detail_page.dart';
 
 void main() {
   runApp(App());
@@ -81,6 +82,12 @@ class App extends StatelessWidget {
                     itemCount: items.length,
                     itemBuilder: (context, index) {
                       return ListTile(
+                        onTap: () async{
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => VideoDetailPage()),
+                          );
+                        },
                         contentPadding: EdgeInsets.all(8),
                         leading: Image.network(
                           'https://cdn-images-1.medium.com/max/1200/1*ilC2Aqp5sZd1wi0CopD1Hw.png',
