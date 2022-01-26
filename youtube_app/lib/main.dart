@@ -36,7 +36,47 @@ class App extends StatelessWidget {
               )
             ],
           ),
-          body: Container(),
+          body: Container(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 60,
+                        height: 60,
+                        child: Image.network(
+                            'https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202201251659',
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Column(
+                        children: [
+                          const Text('とあるYoutubeチャンネル'),
+                          TextButton(
+                              onPressed: (){},
+                              child: Row(
+                                children: [
+                                  Icon(
+                                      Icons.video_call,
+                                      color: Colors.red,),
+                                  Text('登録する')
+                                ],
+                              ),
+                              style: ButtonStyle(
+                                  foregroundColor: MaterialStateProperty.all<Color>(Colors.black))
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
     );
   }
