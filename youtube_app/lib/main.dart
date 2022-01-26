@@ -13,7 +13,8 @@ class App extends StatelessWidget {
       ),
         home:Scaffold(
           appBar: AppBar(
-            title: const Text('Youtubeアプリ'),
+            leading: Icon(Icons.videocam, color: Colors.black,),
+            title: const Text('Youtubeアプリ',style: TextStyle(color: Colors.black),),
           ),
           body: Container(),
         ),
