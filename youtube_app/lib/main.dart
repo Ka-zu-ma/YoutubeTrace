@@ -5,6 +5,8 @@ void main() {
 }
 
 class App extends StatelessWidget {
+  final items = List<String>.generate(10000, (i) => 'Item $i');
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -73,7 +75,42 @@ class App extends StatelessWidget {
                       )
                     ],
                   ),
-                )
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: items.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        contentPadding: EdgeInsets.all(8),
+                        leading: Image.network(
+                          'https://cdn-images-1.medium.com/max/1200/1*ilC2Aqp5sZd1wi0CopD1Hw.png',
+                        ),
+                        title: Column(
+                          children: [
+                            Text(
+                              '[FLutter超入門]リスト作成',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                              ),),
+                            Row(
+                              children: [
+                                Text(
+                                  '200回再生',
+                                  style: TextStyle(fontSize: 13),
+                                ),
+                                Text(
+                                    '5日前',
+                                    style: TextStyle(fontSize: 13)),
+                              ],
+
+                            )
+                          ],
+                        ),
+                        trailing: Icon(Icons.more_vert),
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
           ),
